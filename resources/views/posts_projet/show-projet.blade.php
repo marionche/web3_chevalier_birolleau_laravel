@@ -25,7 +25,7 @@
                     {!! Form::close() !!}
 
                         <a href="{{ route('bap.edit', $bap->id) }}">
-                            Modifier l'article
+                            Modifier le projet
                         </a>
 
                     @endif
