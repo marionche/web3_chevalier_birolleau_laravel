@@ -1,2 +1,0 @@
-@color-master: #868686;
-@color-master-light:mix(@color-master,#fff,16%)
