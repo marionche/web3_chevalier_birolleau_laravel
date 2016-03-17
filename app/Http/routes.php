@@ -36,9 +36,16 @@ Route::group(['middleware' => 'web'], function () {
     	return view('welcome');
     });
 
+    Route::get('/projet', function(){
+        return View::make('posts_projet.create-projet');
+    });
+
     Route::resource('/post', 'PostController');
 
     Route::get('/admin', function(){
         return 'admin';
     })->middleware ('isadmin');
+
+
+
 });

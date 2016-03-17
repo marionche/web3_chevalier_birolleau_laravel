@@ -48,6 +48,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/projet') }}">Projet</a></li>
                     <li><a href="{{ route('post.index') }}">Articles</a></li>
                     @if(Auth::check())
 
