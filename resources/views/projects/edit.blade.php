@@ -4,16 +4,16 @@
     <div class="container">
         <div class="row">
             @include('errors.message')
-             @if(Auth::check() && (Auth::user()->id == $projet->user_id))
+             @if(Auth::check() && (Auth::user()->id == $project->user_id))
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">MODIFIER PROJET</div>
 
                     <div class="panel-body">
                         
-                            {!! Form::model($projet,
+                            {!! Form::model($project,
                             array(
-                            'route' => array('projet.update', $projet->id),
+                            'route' => array('project.update', $project->id),
                             'method' => 'PUT'
                             )) !!}
 
@@ -117,8 +117,8 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('type_projet', 'Type de projet') !!}
-                        {!! Form::text('type_projet', '', [
+                        {!! Form::label('type_project', 'Type de projet') !!}
+                        {!! Form::text('type_project', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Site internet, 3D, Animation 2D, Installation multimédia, Jeu vidéo, DVD, Print, CD-Rom, Evenement, autre ...'
                             'required'
@@ -182,7 +182,7 @@
                         !!}
                         {!! Form::close() !!}
 
-                        <a href="{{ route('projets.show', $projet->id) }}">Retour à la page précédente</a>
+                        <a href="{{ route('projects.show', $project->id) }}">Retour à la page précédente</a>
                         </div>
                     </div>
                 @else

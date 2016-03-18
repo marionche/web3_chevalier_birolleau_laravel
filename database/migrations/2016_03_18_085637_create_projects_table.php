@@ -4,7 +4,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjetsTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProjetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projets', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('name_author');
@@ -23,7 +23,7 @@ class CreateProjetsTable extends Migration
             $table->string('adresse');
             $table->string('telephones');
             $table->string('fiche');
-            $table->string('type_projet');
+            $table->string('type_project');
             $table->string('contexte');
             $table->string('demande');
             $table->string('objectifs');
@@ -41,6 +41,6 @@ class CreateProjetsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('projets');
+        Schema::drop('projects');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateProjetsTable extends Migration
+class UpdateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class UpdateProjetsTable extends Migration
      */
     public function up()
     {
-        Schema::table('projets', function(Blueprint $table) {
+        Schema::table('projects', function(Blueprint $table) {
 
             $table->string('status')->default("Oupsi veuillez un petit peu patientez pour votre réponse")->change();
 

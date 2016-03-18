@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Projet;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,9 +24,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $list = Projet::paginate(10);
+        $list = Project::paginate(10);
 
-        return view('projets.index', compact('list'));
+        return view('projects.index', compact('list'));
     }
 
     /**
@@ -36,7 +36,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projets.create');
+        return view('projects.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class ProjectController extends Controller
             'adresse' => 'required',
             'telephones' => 'required',
             'fiche' => 'required',
-            'type_projet' => 'required',
+            'type_project' => 'required',
             'contexte' => 'required',
             'demande' => 'required',
             'objectifs' => 'required',
@@ -64,13 +64,13 @@ class ProjectController extends Controller
 
         ]);
 
-        $projet = new Projet();
+        $project = new Project();
         $input = $request->input();
         $input['user_id'] = Auth::user()->id;
 
-        $projet->fill($input)->save();
+        $project->fill($input)->save();
 
-        return redirect()->back()->with('success', 'Votre projet a bien été proposé');
+        return redirect()->back()->with('success', 'Votre project a bien été proposé');
     }
 
     /**
@@ -81,9 +81,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $projet = Projet::findOrFail($id);
+        $project = Projet::findOrFail($id);
 
-        return view('projets.show', compact('projet'));
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -94,8 +94,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $projet = Project::findOrFail($id);
-        return view('projets.edit', compact('projet'));
+        $project = Project::findOrFail($id);
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -108,9 +108,9 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
 
-        $projet = Project::findOrFail($id);
+        $project = Project::findOrFail($id);
         $input = $request->input();
-        $projet->fill($input)->save();
+        $project->fill($input)->save();
 
         return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
     }
@@ -123,11 +123,11 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $projet = Project::findOrFail($id);
+        $project = Project::findOrFail($id);
 
-        $projet->delete();
+        $project->delete();
 
-        return redirect()->route('projet.index')->with('success', 'Votre article a bien été supprimé');
+        return redirect()->route('project.index')->with('success', 'Votre article a bien été supprimé');
     }
 
 }

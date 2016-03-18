@@ -6,17 +6,17 @@
             <div class="col-md-10 col-md-offset-1">
                 @include('errors.message')
                 @if(Auth::check()
-                    && (Auth::user()->id == $projet->user_id
+                    && (Auth::user()->id == $project->user_id
                     || Auth::user()->isAdmin))
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3>{{ $projet->name }}</h3>
+                            <h3>{{ $project->name }}</h3>
                             <div class="text-right">
-                                 @if($projet->status == 0)
+                                 @if($project->status == 0)
                                     <h5>Oupsi il va falloir un petit peu patienter ^^ <i class="fa fa-circle-o"></i></h5>
-                                @elseif($projet->status == 1)
+                                @elseif($project->status == 1)
                                     <h5>Oups votre projet n'est pas accepté <i class="fa fa-times"></i></h5>
-                                @elseif($projet->status == 2)
+                                @elseif($project->status == 2)
                                     <h5>Wouah votre projet est accepté ! :)  <i class="fa fa-check"></i></h5>
                                 @endif
                             </div>
@@ -24,51 +24,51 @@
 
                          <div class="panel-body">
                             <h3>Commanditaire du Pojet</h3>
-                            <p>{{ $projet->name_author }}</p>
+                            <p>{{ $project->name_author }}</p>
 
                             <h3>Adresse postale</h3>
-                            <p>{{ $projet->adress }}</p>
+                            <p>{{ $project->adress }}</p>
 
                             <h3>Numéro de téléphone</h3>
-                            <p>{{ $projet->telephone }}</p>
+                            <p>{{ $project->telephone }}</p>
 
                             <h3>Fiche d identité</h3>
-                            <p>{{ $projet->fiche }}</p>
+                            <p>{{ $project->fiche }}</p>
 
                             <h3>Adresse postale</h3>
-                            <p>{{ $projet->adresse }}</p>
+                            <p>{{ $project->adresse }}</p>
 
                             <h3>Numéro de téléphone</h3>
-                            <p>{{ $projet->telephones }}</p>
+                            <p>{{ $project->telephones }}</p>
 
                             <h3>Fiche d identité</h3>
-                            <p>{{ $projet->fiche }}</p>
+                            <p>{{ $project->fiche }}</p>
 
                             <h3>Type du projet</h3>
-                            <p>{{ $projet->type_projet }}</p>
+                            <p>{{ $project->type_project }}</p>
 
                             <h3>Contexte</h3>
-                            <p>{{ $projet->contexte }}</p>
+                            <p>{{ $project->contexte }}</p>
 
                             <h3>Demande</h3>
-                            <p>{{ $projet->demande }}</p>
+                            <p>{{ $project->demande }}</p>
 
                             <h3>Les Objectifs</h3>
-                            <p>{{ $projet->objectifs }}</p>
+                            <p>{{ $project->objectifs }}</p>
 
                             <h3>Contraintes</h3>
-                            <p>{{ $projet->constraintes }}</p>
+                            <p>{{ $project->constraintes }}</p>
 
                         </div>
 
                         @if(Auth::check() && Auth::user()->isAdmin)
-                            @include('projets.status')
+                            @include('projects.status')
                             <div class="panel-body">
-                                <a href="{{ route('projets.index') }}">Retour aux projets</a>
+                                <a href="{{ route('projects.index') }}">Retour aux projects</a>
                             </div>
-                        @elseif(Auth::check() && Auth::user()->id == $projet->user_id)
+                        @elseif(Auth::check() && Auth::user()->id == $project->user_id)
                             <div class="text-center">
-                                <a href="{{ route('projets.edit', $projet->id) }}" class="btn btn-warning">MODIFIER PROJET</a>
+                                <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-warning">MODIFIER PROJET</a>
                             </div>
                             <div class="panel-body">
                                 <a href="{{ route('profil.show', Auth::user()->id) }}">Retourner sur votre profil</a>
@@ -82,7 +82,7 @@
                         </div>
                         @if(Auth::user()->isAdmin)
                             <div class="panel-body">
-                                <a href="{{ route('projets.index') }}">Retour aux projets</a>
+                                <a href="{{ route('projects.index') }}">Retour aux projects</a>
                             </div>
                         @else
                             <div class="panel-body">

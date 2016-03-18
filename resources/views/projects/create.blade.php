@@ -19,17 +19,17 @@
                 <div class="panel-body">
                     {!! Form::open(
                     array(
-                    'route' => 'projet.store',
+                    'route' => 'project.store',
                     'method' => 'POST'
                     ))
                     !!}
 
                     <div class="form-group">
 
-                    {!! Form::label('name', 'Mon superbe projet') !!}
+                    {!! Form::label('name', 'Mon superbe project') !!}
                     {!! Form::text('name', '', [
                         'class' =>'form-control', 
-                        'placeholder' => 'Nom du projet'
+                        'placeholder' => 'Nom du project'
                         ]) 
                     !!}
 
@@ -37,7 +37,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('name_author', 'Commanditaire du projet') !!}
+                    {!! Form::label('name_author', 'Commanditaire du project') !!}
                     {!! Form::text('name_author', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Nom, Prénom, Fonction du commanditaire du projet'
@@ -116,8 +116,8 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('type_projet', 'Type de projet') !!}
-                    {!! Form::text('type_projet', '', [
+                    {!! Form::label('type_project', 'Type de projet') !!}
+                    {!! Form::text('type_project', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Site internet, 3D, Animation 2D, Installation multimédia, Jeu vidéo, DVD, Print, CD-Rom, Evenement, autre ...'
                         ]) 

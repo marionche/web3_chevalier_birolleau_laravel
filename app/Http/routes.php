@@ -42,7 +42,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('/post', 'PostController');
 
-    Route::resource('/projet', 'ProjectController');
+    Route::resource('/project', 'ProjectController');
 
     Route::get('/admin', function(){
         return 'admin';
