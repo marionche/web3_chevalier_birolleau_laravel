@@ -37,3 +37,21 @@ $factory->define(App\Models\Comment::class, function (Faker\Generator $faker) {
         'post_id' => $faker->numberBetween(1, 15),
     ];
 });
+
+$factory->define(App\Models\Projet::class, function (Faker\Generator $faker) {
+    return [
+        'name'=> $faker->sentence(8, true),
+        'name_author'=> $faker->sentence(10, true),
+        'adress'=> $faker->adresse,
+        'telephone'=> $faker->phoneTel,
+        'suivi'=> $faker->sentence(12, true),
+        'adresse'=> $faker->adress,
+        'telephones'=> $faker->phonesTel,
+        'fiche'=> $faker->text,
+        'type_projet'=> "autre",
+        'contexte'=> $faker->text,
+        'demande'=> $faker->text,
+        'objectifs'=> $faker->text,
+        'contraintes' => $faker->text,
+    ];
+});

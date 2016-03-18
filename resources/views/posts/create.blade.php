@@ -29,7 +29,7 @@
                     {!! Form::label('title', 'Titre') !!}
                     {!! Form::text('title', '', [
                         'class' =>'form-control', 
-                        'placeholder' => 'Mon titre'
+                        'placeholder' => 'Mon jolie titre'
                         ]) 
                     !!}
 

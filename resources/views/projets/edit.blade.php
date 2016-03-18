@@ -4,30 +4,26 @@
     <div class="container">
         <div class="row">
             @include('errors.message')
-
+             @if(Auth::check() && (Auth::user()->id == $projet->user_id))
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">AJOUTER UN PROJET</div>
+                    <div class="panel-heading">MODIFIER PROJET</div>
 
                     <div class="panel-body">
+                        
+                            {!! Form::model($projet,
+                            array(
+                            'route' => array('projet.update', $projet->id),
+                            'method' => 'PUT'
+                            )) !!}
 
-                        @if(Auth::check()
-                        && (Auth::user()->id == $bap->user_id
-                        || Auth::user()->isAdmin))
-
-                            {!! Form::model($bap,
-
-                       array(
-                       'route' => array('bap.update', $bap->id),
-                       'method' => 'PUT'
-                       ))
-                       !!}
                        <div class="form-group">
 
-                        {!! Form::label('title', 'Mon projet') !!}
+                        {!! Form::label('name', 'Mon jolie projet') !!}
                         {!! Form::text('name', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Nom du projet'
+                            'required'
                             ]) 
                         !!}
 
@@ -35,10 +31,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Commanditaire du projet') !!}
+                        {!! Form::label('name_author', 'Commanditaire du projet') !!}
                         {!! Form::text('name_author', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Nom, Prénom, Fonction du commanditaire du projet'
+                            'required'
                             ]) 
                         !!}
 
@@ -46,10 +43,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Adresse Postale') !!}
+                        {!! Form::label('adress', 'Adresse Postale') !!}
                         {!! Form::text('adress', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'N° .. avenue..'
+                            'required'
                             ]) 
                         !!}
 
@@ -57,10 +55,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Téléphone') !!}
-                        {!! Form::text('tel', '', [
+                        {!! Form::label('telephone', 'Téléphone') !!}
+                        {!! Form::text('telephone', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Votre numéro de téléphone'
+                            'required'
                             ]) 
                         !!}
 
@@ -68,10 +67,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Nom et Fonction du contact pour le suivi du projet avec étudiants') !!}
+                        {!! Form::label('suivi', 'Nom et Fonction du contact pour le suivi du projet avec étudiants') !!}
                         {!! Form::text('suivi', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Nom, prénom, et fonction'
+                            'required'
                             ]) 
                         !!}
 
@@ -79,10 +79,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Adresse Postale') !!}
-                        {!! Form::text('adress2', '', [
+                        {!! Form::label('adresse', 'Adresse Postale') !!}
+                        {!! Form::text('adresse', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'N° .. avenue..'
+                            'required'
                             ]) 
                         !!}
 
@@ -90,10 +91,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Téléphone') !!}
-                        {!! Form::text('tel2', '', [
+                        {!! Form::label('telephones', 'Téléphone') !!}
+                        {!! Form::text('telephones', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Votre numéro de téléphone'
+                            'required'
                             ]) 
                         !!}
 
@@ -101,10 +103,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Votre fiche d identité') !!}
+                        {!! Form::label('fiche', 'Votre fiche d identité') !!}
                         {!! Form::text('fiche', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Votre fiche d identité'
+                            'required'
                             ]) 
                         !!}
 
@@ -114,10 +117,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Type de projet') !!}
+                        {!! Form::label('type_projet', 'Type de projet') !!}
                         {!! Form::text('type_projet', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Site internet, 3D, Animation 2D, Installation multimédia, Jeu vidéo, DVD, Print, CD-Rom, Evenement, autre ...'
+                            'required'
                             ]) 
                         !!}
 
@@ -125,10 +129,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Contexte de la demande') !!}
+                        {!! Form::label('contexte', 'Contexte de la demande') !!}
                         {!! Form::text('contexte', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Contexte'
+                            'required'
                             ]) 
                         !!}
 
@@ -136,10 +141,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Votre demande') !!}
+                        {!! Form::label('demande', 'Votre demande') !!}
                         {!! Form::text('demande', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Formulez précisément votre demande en décrivant le projet tel que vous le voyez'
+                            'required'
                             ]) 
                         !!}
 
@@ -147,10 +153,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Vos objectifs') !!}
+                        {!! Form::label('objectifs', 'Vos objectifs') !!}
                         {!! Form::text('objectifs', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Quelles sont vos attentes ?'
+                            'required'
                             ]) 
                         !!}
 
@@ -158,10 +165,11 @@
 
                         <div class="form-group">
 
-                        {!! Form::label('title', 'Contraintes particulières éventuelles et informations complementaires') !!}
+                        {!! Form::label('contraintes', 'Contraintes particulières éventuelles et informations complementaires') !!}
                         {!! Form::text('contraintes', '', [
                             'class' =>'form-control', 
                             'placeholder' => 'Vos contraintes'
+                            'required'
                             ]) 
                         !!}
 
@@ -174,17 +182,18 @@
                         !!}
                         {!! Form::close() !!}
 
-                        @else
-                            <p>Vous n'avez pas les droits necessaires</p>
-                            <a href="{{ route('bap.show', $bap->id) }}">
-                                Retour au projet
-                            </a>
-                        @endif
-
+                        <a href="{{ route('projets.show', $projet->id) }}">Retour à la page précédente</a>
+                        </div>
                     </div>
-                </div>
+                @else
+                    <div class="alert-danger alert">
+                        <div class="text-center">
+                            <p>Oupsi vous n êtes pas sur votre projet ! :P</p>
+                        </div>
+                        <a href="{{ route('profil.show', Auth::user()->id) }}">Retourner sur votre profil</a>
+                    </div>
+                @endif
             </div>
-
         </div>
     </div>
 @endsection

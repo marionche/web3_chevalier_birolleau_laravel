@@ -48,11 +48,16 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/projet') }}">Projet</a></li>
-                    <li><a href="{{ route('post.index') }}">Articles</a></li>
+                    <li><a href="{{ route('projet.index') }}">Projet</a></li>
+                    <li><a href="{{ url('/post') }}">Articles</a></li>
                     @if(Auth::check())
-
                         <li><a href="{{ route('post.create') }}">Rediger un article</a></li>
+                    @endif
+                    @if(Auth::check())
+                        <li><a href="{{ route('projet.create') }}">Créer votre bébé projet</a></li>
+                    @endif
+                    @if(Auth::check() && Auth::user()->isAdmin)
+                    <li><a href="{{ route('projet.index') }}">Les petites merveilles (tous les projets)</a></li>
                     @endif
                 </ul>
 

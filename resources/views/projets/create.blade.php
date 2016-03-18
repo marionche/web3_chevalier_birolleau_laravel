@@ -19,14 +19,14 @@
                 <div class="panel-body">
                     {!! Form::open(
                     array(
-                    'route' => 'bap.store',
+                    'route' => 'projet.store',
                     'method' => 'POST'
                     ))
                     !!}
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Mon projet') !!}
+                    {!! Form::label('name', 'Mon superbe projet') !!}
                     {!! Form::text('name', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Nom du projet'
@@ -37,7 +37,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Commanditaire du projet') !!}
+                    {!! Form::label('name_author', 'Commanditaire du projet') !!}
                     {!! Form::text('name_author', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Nom, Prénom, Fonction du commanditaire du projet'
@@ -48,7 +48,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Adresse Postale') !!}
+                    {!! Form::label('adress', 'Adresse Postale') !!}
                     {!! Form::text('adress', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'N° .. avenue..'
@@ -59,8 +59,8 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Téléphone') !!}
-                    {!! Form::text('tel', '', [
+                    {!! Form::label('telephone', 'Téléphone') !!}
+                    {!! Form::text('telephone', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Votre numéro de téléphone'
                         ]) 
@@ -70,7 +70,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Nom et Fonction du contact pour le suivi du projet avec étudiants') !!}
+                    {!! Form::label('suivi', 'Nom et Fonction du contact pour le suivi du projet avec étudiants') !!}
                     {!! Form::text('suivi', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Nom, prénom, et fonction'
@@ -81,8 +81,8 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Adresse Postale') !!}
-                    {!! Form::text('adress2', '', [
+                    {!! Form::label('adresse', 'Adresse Postale') !!}
+                    {!! Form::text('adresse', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'N° .. avenue..'
                         ]) 
@@ -92,8 +92,8 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Téléphone') !!}
-                    {!! Form::text('tel2', '', [
+                    {!! Form::label('telephones', 'Téléphone') !!}
+                    {!! Form::text('telephones', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Votre numéro de téléphone'
                         ]) 
@@ -103,7 +103,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Votre fiche d identité') !!}
+                    {!! Form::label('fiche', 'Votre fiche d identité') !!}
                     {!! Form::text('fiche', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Votre fiche d identité'
@@ -116,7 +116,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Type de projet') !!}
+                    {!! Form::label('type_projet', 'Type de projet') !!}
                     {!! Form::text('type_projet', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Site internet, 3D, Animation 2D, Installation multimédia, Jeu vidéo, DVD, Print, CD-Rom, Evenement, autre ...'
@@ -127,7 +127,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Contexte de la demande') !!}
+                    {!! Form::label('contexte', 'Contexte de la demande') !!}
                     {!! Form::text('contexte', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Contexte'
@@ -138,7 +138,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Votre demande') !!}
+                    {!! Form::label('demande', 'Votre demande') !!}
                     {!! Form::text('demande', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Formulez précisément votre demande en décrivant le projet tel que vous le voyez'
@@ -149,7 +149,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Vos objectifs') !!}
+                    {!! Form::label('objectifs', 'Vos objectifs') !!}
                     {!! Form::text('objectifs', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Quelles sont vos attentes ?'
@@ -160,7 +160,7 @@
 
                     <div class="form-group">
 
-                    {!! Form::label('title', 'Contraintes particulières éventuelles et informations complementaires') !!}
+                    {!! Form::label('contraintes', 'Contraintes particulières éventuelles et informations complementaires') !!}
                     {!! Form::text('contraintes', '', [
                         'class' =>'form-control', 
                         'placeholder' => 'Vos contraintes'
@@ -170,7 +170,7 @@
                     </div>
 
                     
-                    {!! Form::submit('Enregistrer',
+                    {!! Form::submit('Enregistrer votre bébé',
                     ['class' => 'btn btn-primary'])
                     !!}
 
