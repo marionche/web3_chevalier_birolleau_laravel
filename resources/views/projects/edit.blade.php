@@ -190,7 +190,7 @@
                         <div class="text-center">
                             <p>Oupsi vous n êtes pas sur votre projet ! :P</p>
                         </div>
-                        <a href="{{ route('profil.show', Auth::user()->id) }}">Retourner sur votre profil</a>
+                        <a href="{{ route('profile.show', Auth::user()->id) }}">Retourner sur votre profil</a>
                     </div>
                 @endif
             </div>

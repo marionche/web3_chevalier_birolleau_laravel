@@ -81,7 +81,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Projet::findOrFail($id);
+        $project = Project::findOrFail($id);
 
         return view('projects.show', compact('project'));
     }
@@ -112,7 +112,7 @@ class ProjectController extends Controller
         $input = $request->input();
         $project->fill($input)->save();
 
-        return redirect()->back()->with('success', 'Votre modification a bien étée prise en compte');
+        return redirect()->back()->with('success', 'Super la modification s est réalisée avec succès ;) ');
     }
 
     /**
@@ -127,7 +127,7 @@ class ProjectController extends Controller
 
         $project->delete();
 
-        return redirect()->route('project.index')->with('success', 'Votre article a bien été supprimé');
+        return redirect()->route('project.index')->with('success', 'Oh non ! Votre projet est supprimé :(');
     }
 
 }

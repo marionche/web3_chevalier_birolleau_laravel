@@ -14,7 +14,7 @@ class UpdateProjectsTable extends Migration
     {
         Schema::table('projects', function(Blueprint $table) {
 
-            $table->string('status')->default("Oupsi veuillez un petit peu patientez pour votre réponse")->change();
+            $table->tinyInteger('status')->default(0)->unsigned;
 
         });
     }

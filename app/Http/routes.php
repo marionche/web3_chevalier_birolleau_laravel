@@ -44,6 +44,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('/project', 'ProjectController');
 
+    Route::resource('/profile', 'ProfileController');
+
     Route::get('/admin', function(){
         return 'admin';
     })->middleware ('isadmin');
